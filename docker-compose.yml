@@ -11,7 +11,9 @@ services:
     image: mysql:8
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: testdb
+      MYSQL_DATABASE: docker-librairy
+      MYSQL_CHARSET: utf8mb4
+      MYSQL_COLLATION: utf8mb4_unicode_ci
     volumes:
       - db_data:/var/lib/mysql
       - ./db-init/init.sql:/docker-entrypoint-initdb.d/init.sql

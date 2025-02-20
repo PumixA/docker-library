@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des Utilisateurs</title>
+    <title>Liste des Livres</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Liste des Utilisateurs</h1>
-<ul id="user-list"></ul>
-
+<h1>Liste des Livres</h1>
+<div class="filters">
+    <input type="text" id="searchInput" placeholder="Recherche...">
+    <select id="genreFilter"></select>
+    <button class="add-book">+</button>
+</div>
+<ul id="books-list"></ul>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2>Ajouter un Livre</h2>
+        <form id="bookForm">
+            <div class="form-group">
+                <label for="name">Nom du livre :</label>
+                <input type="text" id="name" name="name">
+                <small class="error" id="nameError"></small>
+            </div>
+            <div class="form-group">
+                <label for="genre">Genre :</label>
+                <input type="text" id="genre" name="genre">
+                <small class="error" id="genreError"></small>
+            </div>
+            <div class="form-group">
+                <label for="price">Prix :</label>
+                <input type="number" id="price" name="price">
+                <small class="error" id="priceError"></small>
+            </div>
+            <button type="submit" id="submitBtn">Valider</button>
+        </form>
+    </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
